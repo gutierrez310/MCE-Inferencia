@@ -4,28 +4,8 @@ Created on Thu Aug 18 13:50:32 2022
 
 @author: carlos
 """
-from math import comb
 
-
-def p(n, i):
-    prod = 1
-    for j in range(i):
-        prod /= n - j
-    return prod
-
-def sol(n):
-    sol = 0
-    for i in range(1,n+1):
-        sol += comb(n, i)*p(n, i)*pow(-1,i-1)
-    return sol
-
-print(sol(4))
-
-def factorr(n):
-    prod=1
-    for i in range(n,1,-1):
-        prod*=i
-    return prod
+""" PSEUDOCODIGO"""
 """
 Funcion p(n, i)
   prod <- 0
@@ -55,3 +35,29 @@ Escribir sol(20)
 Escribir sol(100)
 
 """
+
+from math import comb
+
+
+def p(n, i):
+    prod = 1
+    for j in range(i):
+        prod /= n - j
+    return prod
+
+def sol(n):
+    sol = 0
+    for i in range(1,n+1):
+        sol += comb(n, i)*p(n, i)*pow(-1,i-1)
+    return sol
+
+def factorr(n):
+    prod=1
+    for i in range(n,1,-1):
+        prod*=i
+    return prod
+
+print(sol(5))
+print(sol(10))
+print(sol(20))
+print(sol(100))
